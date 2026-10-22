@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Fun Land — مغامرات تيدي</title>
+<style>
+:root{--ink:#26324b;--pink:#ff8fbd;--yellow:#ffe27a;--blue:#a6e6ff;--green:#b9f0ad;--purple:#c9bcff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Tahoma,sans-serif;color:var(--ink);background:linear-gradient(#aeeaff 0%,#e5f8ff 45%,#c6f1b9 46%,#8bdc9c 100%);min-height:100vh}
+button{font:inherit;cursor:pointer;border:0}header{text-align:center;padding:18px 12px 6px}.brand{display:inline-block;background:white;border:4px solid #fff;border-radius:25px;padding:8px 18px;box-shadow:0 6px #d4e3f0}.brand span{font-size:2rem}h1{margin:0;color:#5c50cf;font-size:clamp(1.5rem,5vw,2.4rem)}header p{margin:8px auto;max-width:600px;line-height:1.6}
+.wrap{max-width:920px;margin:auto;padding:10px 14px 35px}.hud{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;background:#ffffffed;border-radius:18px;padding:10px 13px;box-shadow:0 4px #b4d9e7;font-weight:800}.badge{background:#fff0ad;border-radius:12px;padding:7px 10px}
+.map-title{text-align:center;margin:20px 0 12px;font-size:1.3rem}.islands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.island{position:relative;min-height:130px;border:4px solid white;border-radius:28px;padding:13px 8px;text-align:center;box-shadow:0 6px #9dcab1;transition:.15s}.island:active{transform:translateY(3px);box-shadow:0 3px #9dcab1}.island .ico{display:block;font-size:2.5rem}.island b{display:block;font-size:1.05rem}.island small{direction:ltr;display:block}.i1{background:#fff0bc}.i2{background:#d9f5ff}.i3{background:#e7ddff}.i4{background:#ffe0ed}.i5{background:#d9f6d1}.i6{background:#ffedcf}.i7{background:#e3eaff}.i8{background:#fff5a9}
+.game{margin-top:20px;background:#ffffffed;border:4px solid white;border-radius:28px;padding:18px 14px;text-align:center;box-shadow:0 7px #acd3c0}.game h2{margin:0 0 5px}.muted{color:#68758a;margin:0 0 14px}.scene{max-width:510px;margin:0 auto 14px;padding:16px 10px;background:linear-gradient(135deg,#fff5bf,#ffe5f0);border:3px solid white;border-radius:24px}.picture{font-size:4.1rem}.word{font-size:2rem;font-weight:900;direction:ltr}.arabic{color:#626e83}.btns{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:13px 0}.btn{padding:11px 16px;border-radius:15px;font-weight:800;box-shadow:0 4px #d9dfec}.btn:active{transform:translateY(3px);box-shadow:0 1px #d9dfec}.purple{background:#8175ee;color:white}.blue{background:#dff6ff}.gold{background:#ffe27a}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:560px;margin:auto}.answer{background:white;border:3px solid #e5e8f2;border-radius:16px;padding:13px 7px;min-height:55px;font-weight:800;font-size:1.05rem}.answer.correct{background:#d9f9d7;border-color:#60bd70}.answer.wrong{background:#ffe0e0;border-color:#e78383}.feedback{min-height:30px;font-weight:800;margin:12px 0 0}.bar{height:12px;max-width:560px;margin:10px auto;background:#e9edf4;border-radius:99px;overflow:hidden}.bar div{height:100%;width:0;background:linear-gradient(90deg,#8de6a4,#ffe27a,#ff8fbd);transition:.3s}footer{text-align:center;padding:20px 10px;color:#365a53;font-size:.9rem}
+@media(min-width:650px){.islands{grid-template-columns:repeat(4,minmax(0,1fr))}.island{min-height:150px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><span>🧸 🏝️</span><h1>English Fun Land</h1><strong>مغامرات تيدي في عالم الإنجليزي</strong></div><p>أهلًا يا بطل! اختار جزيرة، اتعلم كلمات جديدة، واجمع النجوم عشان تفتح مغامرات أكتر 🌈</p></header>
+<main class="wrap">
+<div class="hud"><span>⭐ النجوم: <b id="stars">0</b></span><span class="badge" id="level">المغامرة ١</span><span>🎒 مع تيدي</span></div>
+<h2 class="map-title">🗺️ خريطة المغامرات — اختار جزيرتك!</h2>
+<section class="islands">
+<button class="island i1" data-topic="animals"><span class="ico">🐾</span><b>جزيرة الحيوانات</b><small>Animal Island</small></button>
+<button class="island i2" data-topic="colors"><span class="ico">🌈</span><b>جزيرة الألوان</b><small>Color Island</small></button>
+<button class="island i3" data-topic="numbers"><span class="ico">🔢</span><b>جزيرة الأرقام</b><small>Number Island</small></button>
+<button class="island i4" data-topic="greetings"><span class="ico">👋</span><b>جزيرة التحيات</b><small>Greeting Island</small></button>
+<button class="island i5" data-topic="fruits"><span class="ico">🍎</span><b>جزيرة الفواكه</b><small>Fruit Island</small></button>
+<button class="island i6" data-topic="alphabet"><span class="ico">🔤</span><b>جزيرة الحروف</b><small>Letter Island</small></button>
+<button class="island i7" data-topic="body"><span class="ico">🖐️</span><b>جزيرة الجسم</b><small>Body Island</small></button>
+<button class="island i8" data-topic="mix"><span class="ico">🏆</span><b>جزيرة التحدي</b><small>Challenge Island</small></button>
+</section>
+<section class="game" id="game">
+<h2 id="title">🐾 جزيرة الحيوانات</h2><p class="muted" id="hint">اسمع الكلمة بالإنجليزي، وبعدها اختار معناها الصحيح.</p>
+<div class="scene"><div class="picture" id="pic">🐶</div><div class="word" id="word">Dog</div><div class="arabic" id="meaning">كلب</div></div>
+<div class="btns"><button class="btn blue" id="speak">🔊 اسمع الكلمة</button><button class="btn gold" id="showMeaning">📖 ساعدني يا تيدي</button></div>
+<p><b id="ask">ما معنى كلمة Dog؟</b></p><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div>
+<div class="bar"><div id="fill"></div></div>
+<div class="btns"><button class="btn purple" id="next">السؤال التالي ➜</button><button class="btn blue" id="restart">🔄 ابدأ من جديد</button></div>
+</section>
+</main><footer>💜 لعبة تعليمية بسيطة للأطفال — English Fun Land</footer>
+<script>
+const sets={
+animals:{title:"🐾 جزيرة الحيوانات",items:[["🐶","Dog","كلب"],["🐱","Cat","قطة"],["🐰","Rabbit","أرنب"],["🦁","Lion","أسد"],["🐘","Elephant","فيل"],["🐟","Fish","سمكة"]]},
+colors:{title:"🌈 جزيرة الألوان",items:[["🔴","Red","أحمر"],["🔵","Blue","أزرق"],["🟡","Yellow","أصفر"],["🟢","Green","أخضر"],["🟣","Purple","بنفسجي"],["🟠","Orange","برتقالي"]]},
+numbers:{title:"🔢 جزيرة الأرقام",items:[["1️⃣","One","واحد"],["2️⃣","Two","اثنان"],["3️⃣","Three","ثلاثة"],["4️⃣","Four","أربعة"],["5️⃣","Five","خمسة"],["6️⃣","Six","ستة"]]},
+greetings:{title:"👋 جزيرة التحيات",items:[["👋","Hello","مرحبًا"],["😊","Thank you","شكرًا"],["🌞","Good morning","صباح الخير"],["🌙","Good night","تصبح على خير"],["👋","Goodbye","إلى اللقاء"],["🙂","How are you?","كيف حالك؟"]]},
+fruits:{title:"🍎 جزيرة الفواكه",items:[["🍎","Apple","تفاحة"],["🍌","Banana","موزة"],["🍊","Orange","برتقالة"],["🍇","Grapes","عنب"],["🍓","Strawberry","فراولة"],["🍉","Watermelon","بطيخ"]]},
+alphabet:{title:"🔤 جزيرة الحروف",items:[["🅰️","A","حرف إيه"],["🅱️","B","حرف بي"],["©️","C","حرف سي"],["🐶","D","حرف دي"],["🥚","E","حرف إي"],["🐟","F","حرف إف"]]},
+body:{title:"🖐️ جزيرة الجسم",items:[["👁️","Eye","عين"],["👂","Ear","أذن"],["👃","Nose","أنف"],["👄","Mouth","فم"],["✋","Hand","يد"],["🦶","Foot","قدم"]]}
+};
+const mixed=Object.values(sets).flatMap(x=>x.items);
+let topic="animals",index=0,stars=0,answered=false,order=[];
+const $=id=>document.getElementById(id);
+function shuffled(arr){return [...arr].sort(()=>Math.random()-.5)}
+function currentItems(){return topic==="mix"?mixed:sets[topic].items}
+function startTopic(t){topic=t;index=0;order=shuffled(currentItems());document.querySelectorAll(".island").forEach(b=>b.style.outline=b.dataset.topic===t?"4px solid #5b55cf":"none");$("title").textContent=topic==="mix"?"🏆 جزيرة التحدي":sets[topic].title;$("level").textContent="المغامرة "+["١","٢","٣","٤","٥","٦","٧","٨"][Object.keys(sets).concat("mix").indexOf(t)];render()}
+function render(){let items=currentItems();if(index>=order.length){order=shuffled(items);index=0}let item=order[index];answered=false;$("pic").textContent=item[0];$("word").textContent=item[1];$("meaning").textContent=item[2];$("ask").textContent="ما معنى كلمة "+item[1]+"؟";$("hint").textContent="اسمع الكلمة بالإنجليزي، وبعدها اختار معناها الصحيح."; $("feedback").textContent="";$("fill").style.width=(index/items.length*100)+"%";let choices=shuffled([item,...shuffled(items.filter(x=>x!==item)).slice(0,3)]);$("answers").innerHTML="";choices.forEach(c=>{let b=document.createElement("button");b.className="answer";b.textContent=c[2];b.onclick=()=>check(b,c,item);$("answers").appendChild(b)});}
+function check(btn,c,item){if(answered)return;answered=true;if(c===item){btn.classList.add("correct");$("feedback").textContent="🎉 برافو! إجابة صحيحة! كسبت نجمة ⭐";stars++;$("stars").textContent=stars;if("speechSynthesis"in window){let u=new SpeechSynthesisUtterance("Great job!");u.lang="en-US";speechSynthesis.speak(u)}}else{btn.classList.add("wrong");$("feedback").textContent="💛 محاولة جميلة! الإجابة الصحيحة: "+item[2];[...$("answers").children].forEach(b=>{if(b.textContent===item[2])b.classList.add("correct")})}$("fill").style.width=((index+1)/currentItems().length*100)+"%";}
+function speak(){if(!("speechSynthesis"in window)){$("feedback").textContent="ميزة النطق غير متاحة في هذا المتصفح.";return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance($("word").textContent);u.lang="en-US";u.rate=.78;speechSynthesis.speak(u)}
+document.querySelectorAll(".island").forEach(b=>b.addEventListener("click",()=>startTopic(b.dataset.topic)));
+$("speak").onclick=speak;$("showMeaning").onclick=()=>{$("feedback").textContent="💡 معناها بالعربي: "+$("meaning").textContent;speak()};
+$("next").onclick=()=>{if(!answered){$("feedback").textContent="اختار إجابة الأول يا بطل 😊";return}index++;render()};
+$("restart").onclick=()=>{stars=0;$("stars").textContent=0;startTopic(topic)};
+startTopic("animals");
+</script>
+</body></html>
